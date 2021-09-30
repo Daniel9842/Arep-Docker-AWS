@@ -4,8 +4,9 @@ import static spark.Spark.*;
 public class SparkWebServer {
     
     public static void main(String... args){
-          port(getPort());
-          get("hello", (req,res) -> "Hello Docker!");
+    	ConnectMongodb mongodb = new ConnectMongodb();
+        port(getPort());
+        get("hello", (req,res) -> "Hello Docker!");
     }
 
     private static int getPort() {
