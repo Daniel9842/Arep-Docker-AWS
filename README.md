@@ -20,11 +20,17 @@ Luego colocar en el navegador:
 http://localhost:4567
 
 ## Diagrama de clases
-![Design Diagram](images/proyectos.PNG "Diagram")<br>
+![Design Diagram](images/proyecto.PNG "Diagram")<br>
 La clase sparkWebServer contiene un objeto ConnectMongodb y al entrar a /logService se registra la cadena enviada por el usuario, se llama al 
 método addString, posteriormente se le retorna al usuario un objeto json con las últimos 10 cadenas registradas, la clase contiene los 
 métodos addString y getStringDB que retorna las cadenas almacenadas, para conectar a la base de datos en mongodb se utiliza MongoClient,
 MongoDatabase y MongoCollection.
 
+## Funcionamiento
+En la siguiente imagen se muestra el inicio y el espacio para que el usuario escriba la cadena.
+![registrar registrar](images/cantidad.PNG "registrar")<br>
+Al registrar la cadena se lleva al usuario a la siguiente página en la que se muestra el json con los últimos 10 datos almacenados,
+incluyendo el que acabó de registrar.
+![consultar consultar](images/cantidad2.PNG "consultar")<br>
 
 
