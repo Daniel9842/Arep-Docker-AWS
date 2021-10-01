@@ -1,12 +1,19 @@
 package edu.escuelaing.arep.sparkwebDocker;
 import static spark.Spark.*;
 
+import com.google.gson.Gson;
+
 public class SparkWebServer {
-    
+	private static ConnectMongodb mongodb = new ConnectMongodb();
+	
     public static void main(String... args){
-    	ConnectMongodb mongodb = new ConnectMongodb();
+    	staticFiles.location("/public");
+    	//mongodb.getStringsDB();
+    	//mongodb.addString("mongodb");
         port(getPort());
-        get("hello", (req,res) -> "Hello Docker!");
+        get("/logService", (request,response) -> {response.type("application/json");
+        mongodb.addString(request.queryParams("cadena"));
+        return new Gson().toJson(mongodb.getStringsDB());});
     }
 
     private static int getPort() {
