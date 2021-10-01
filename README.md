@@ -37,11 +37,13 @@ incluyendo el que acabó de registrar.
 
 La explicación de generación se encuentra en el siguiente archivo:[Generación de imágenes](https://github.com/Daniel9842/Arep-Docker-AWS/blob/master/TALLER%20DE%20DE%20MODULARIZACI%C3%93N%20CON%20VIRTUALIZACI%C3%93N%20E%20INTRODUCCI%C3%93N%20A%20DOCKER%20Y%20A%20AWS.pdf)
 
-A continuación, se mostrará el despliegue en aws siguiendo la guía citada.
+A continuación, se mostrará el despliegue del programa funcionando en aws siguiendo la guía citada.
 
 
 ## Despliegue en AWS
+Se coloca una cadena.
 ![aws aws](images/aws1.PNG "aws")<br>
+Se muestran los últimos 10 datos almacenados incluyendo el nuevo que ingresó el usuario.
 ![aws aws](images/aws2.PNG "aws")<br>
 
 
