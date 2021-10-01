@@ -13,13 +13,21 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
 import org.bson.Document;
-
+/**
+ * La clase crea una conexión a una base de datos en mongodb
+ * @author Daniel Santiago Ducuara Ardila
+ *
+ */
 public class ConnectMongodb {
 	
 	private MongoClient client = (MongoClient) MongoClients.create("mongodb+srv://db:db@cluster0.nznji.mongodb.net/db?retryWrites=true&w=majority");
 	private MongoDatabase database = client.getDatabase("db");
 	private MongoCollection<Document> collection = database.getCollection("cadenas");
 	
+	/**
+	 * Este método extrae los datos de la base de datos en mongodb.
+	 * @return una lista con los últimos 10 datos.
+	 */
 	public ArrayList<String> getStringsDB() {
 		int contStringsDB=0;
 		int index = 0;	
@@ -42,7 +50,11 @@ public class ConnectMongodb {
 	    	}
 		return Jsonarray;
 	}
-
+	
+	/**
+	 * Registra la cadena escrita por el usuario en la base de datos con la fecha del registro.
+	 * @param userString es la cadena enviada por el usuario.
+	 */
 	public void addString(String userString) {
 		Date date = Calendar.getInstance().getTime();  
         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");  
