@@ -33,6 +33,10 @@ Al registrar la cadena se lleva al usuario a la siguiente página en la que se m
 incluyendo el que acabó de registrar.
 ![consultar consultar](images/cantidad2.PNG "consultar")<br>
 
+## cómo generar las imágenes para desplegarlo.
+
+La explicación de generación se encuentra en el siguiente archivo:[Generación de imágenes](https://github.com/Daniel9842/Arep-Docker-AWS/blob/master/TALLER%20DE%20DE%20MODULARIZACI%C3%93N%20CON%20VIRTUALIZACI%C3%93N%20E%20INTRODUCCI%C3%93N%20A%20DOCKER%20Y%20A%20AWS.pdf)
+
 
 ## Despliegue en AWS
 ![aws aws](images/aws1.PNG "aws")<br>
