@@ -11,38 +11,20 @@ y un botón y cada vez que el usuario envía un mensaje, este se lo envía al se
 que este le regresa en formato JSON. El servicio REST recibe la cadena e implementa un algoritmo de balanceo de cargas de Round Robin, 
 delegando el procesamiento del mensaje y el retorno de la respuesta a cada una de las tres instancias del servicio LogService.
 
-Para ejecutar el programa por consola utilizar:
+Para ejecutar el programa localmente por consola utilizar:
 
 java -cp "target/classes;target/dependency/*" edu.escuelaing.arep.sparkwebDocker.SparkWebServer
 
+Luego colocar en el navegador:
+
+http://localhost:4567
+
 ## Diagrama de clases
-
 ![Design Diagram](images/proyectos.PNG "Diagram")<br>
+La clase sparkWebServer contiene un objeto ConnectMongodb y al entrar a /logService se registra la cadena enviada por el usuario, se llama al 
+método addString, posteriormente se le retorna al usuario un objeto json con las últimos 10 cadenas registradas, la clase contiene los 
+métodos addString y getStringDB que retorna las cadenas almacenadas, para conectar a la base de datos en mongodb se utiliza MongoClient,
+MongoDatabase y MongoCollection.
 
-### Paquete Square
-![Design SquareDiagram](Design/Square.PNG "SquareDiagram")<br>
-En el paquete Square se divide en dos clases, el cliente y el servidor, en el método main de ambas clases se inicia el proceso
-de conexión entre ambos, en el servidor el método calculateSquare recibe como entrada el número que vaya ingresando la clase cliente 
-y el método le retorna el número que recibió al cuadrado. Para cerrar la conexión es necesario escribir "Bye.".
-Para la ejecución es necesario iniciar primero el servidor y luego el cliente. la clase cliente empieza a enviar números y el servidor
-irá respondiendo.
-### Paquete URL
-![Design URLDiagram](Design/URL.PNG "URLDiagram")<br>
-El URLReader en el método main recibe una url, el método guarda la información html de la página y envía esta información al método writeFile,
-esté método se encarga de crear un archivo llamado resultado.html con la información guardada, este archivo se creará en la raiz de la carpeta.
 
-El URLScanner recibe una url en el método main y la envía al método methodsValue que retorna la información de los 8 métodos que retornan lainformación del
-objeto URL.
-### Paquete HttpServer
-![Design HttpServerDiagram](Design/HttpServer.PNG "HttpServerDiagram")<br>
-El paquete HttpServer se encarga de crear un servidor que soporte múltiples solicitudes, la clase cuenta con métodos como startServer en el cual se inicia la conexión 
-al servidor, en el método processRequest se crea la solicitud del servidor y en el método createTextResponse retorna la información del archivo html.
-Para la ejecución es necesario iniciar el servidor y en el navegador colocar 127.0.0.1:35000/archivo, para la parte del archivo se encuentran 3 archivos en la 
-carpeta TestHttpServer para probar con dichos archivos.
 
-## Reporte de pruebas
-![Tests Test Report](Design/Test.PNG "Test Report")<br>
-Se realiza el reporte de pruebas con todas las pruebas satisfactorias.
-Para las pruebas de HttpServer se encuentra la carpeta TestHttpServer con 3 archivos html y 3 imágenes en formato png,jpg y jfif.
-Al ejecutar las pruebas se crea un archivo resultado.html en la raiz de la carpeta, si este archivo se crea quiere decir que la prueba de 
-URLReader es satisfactoria. 
