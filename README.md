@@ -34,3 +34,8 @@ incluyendo el que acabó de registrar.
 ![consultar consultar](images/cantidad2.PNG "consultar")<br>
 
 
+## Despliegue en AWS
+![aws aws](images/aws1.PNG "aws")<br>
+![aws aws](images/aws2.PNG "aws")<br>
+
+
